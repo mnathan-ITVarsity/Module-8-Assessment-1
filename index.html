@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+        <p id="welcome">Welcome! Please Log In</p>
+
+        <form>
+            <label for="usernameInput">Username &nbsp;&nbsp;&nbsp;</label><input type="text" id="usernameInput"/> <br/><br/><br/>
+            <label for="passwordInput">Password&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" id="passwordInput"/>
+            <br/>
+            <p id="message"></p>
+            <br/><br/>
+            <a href="#" onclick="verifyUser()">Log In</a>
+        </form>
+        <br/><br/>
+        <p id="hint">(HINT: Username=Nathan & Password=123)</p>
+    </div>
+    </div>
+
+        <script>
+
+            function verifyUser(){
+                var username = document.getElementById("usernameInput").value;
+                var password = document.getElementById("passwordInput").value;
+                checkUserCreds(username, password);
+            }
+
+            function checkUserCreds(username, password){
+                var systemUsername = "Nathan";
+                var systemPassword = "123";
+
+                if(systemUsername == username && systemPassword == password){
+                    document.getElementById("message").innerHTML = "Correct, you will be redirected...";
+                }else{
+                    document.getElementById("message").innerHTML = "Incorrect password or username. Please try again";
+                }
+            }
+
+        </script>
+
+    </body>
+
+</html>
